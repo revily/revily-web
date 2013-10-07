@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# set -e
+
+. `dirname $0`/_common
+
+function bundle_install() {
+  local bundler_args="--binstubs .bin --path vendor/bundle"
+  local ci_bundler_args="--without local development staging production"
+
+  banner "Running bundler"
+  export PATH=".bin:$PATH"
+  rm -rf .bundle
+
+  if [ $CI ]; then
+    ./script/wad
+  else
+    bundle install $bundler_args "$@" >&3 2>&1
+  fi
+}
+
+bundle_install
+finalize

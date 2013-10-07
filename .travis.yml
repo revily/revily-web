@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 1.9.3
+env:
+  global:
+    - S3_REGION="us-east-1"
+    - S3_BUCKET_NAME="revily-web-bundle"
+    - RAILS_ENV="test"
+    - secure: "SdWiowoSg1Lt6LH56gFl2yZDUEa68QckxnFWdYZ/9dPF3RFyFNpvXc/qv4TAdwwA2sHsFO5TpjDOxMvzqt6GNeivjCoWjaR2uaZjxRwcpFT/uM9DgkAA+ahG5cZJFlIBYTUadm4yNbYCSbD7ZVQVFmG69/H12RoiwwWK/tMM4vo="
+install: "script/bootstrap"
+script: "script/cibuild"
+after_script:
+branches:
+  only:
+  - master
