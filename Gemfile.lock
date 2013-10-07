@@ -1,13 +1,6 @@
 GIT
-  remote: git://github.com/sporkrb/spork-rails.git
-  revision: 0dd45e59d3237b4c8f9efc215b46d9c07072a95e
-  specs:
-    spork-rails (4.0.0)
-      rails (>= 3.0.0, < 5)
-      spork (>= 1.0rc0)
-
-PATH
-  remote: ../revily-client
+  remote: git://github.com/revily/revily-client.git
+  revision: 7d931b8302d89cf2c8ddc5c93d50e8e470489e36
   specs:
     revily-client (0.0.2)
       faraday (~> 0.8)
@@ -15,6 +8,14 @@ PATH
       hashie (~> 2.0)
       her
       multi_json (~> 1.7)
+
+GIT
+  remote: git://github.com/sporkrb/spork-rails.git
+  revision: 0dd45e59d3237b4c8f9efc215b46d9c07072a95e
+  specs:
+    spork-rails (4.0.0)
+      rails (>= 3.0.0, < 5)
+      spork (>= 1.0rc0)
 
 GEM
   remote: https://rubygems.org/
