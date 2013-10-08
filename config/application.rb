@@ -25,4 +25,5 @@ module Revily
   end
 end
 
+# autoload :Revily, 'revily'
 require 'revily/web'

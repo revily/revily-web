@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  respond_to :html
+
   def new
   end
 
@@ -16,6 +18,13 @@ class SessionsController < ApplicationController
   def destroy
     session.destroy
     redirect_to root_url, notice: "Logged out!"
+  end
+
+  def _inspect
+    # render text: "#{(RequestStore.store[:auth_token] || "nada")}"
+    respond_with do |format|
+      format.html
+    end
   end
 
   private
