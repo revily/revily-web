@@ -8,11 +8,15 @@ gem "revily-client",                                 github: "revily/revily-clie
 gem "coffee-rails",                         "4.0.0"
 gem "dotenv-rails",                         "0.9.0"
 # gem "haml-rails", 
+gem "her",                                  "0.6.8"
 gem "jquery-rails",                         "3.0.4"
 gem "recipient_interceptor",                "0.1.2"
+gem "redis-rails",                          "4.0.0"
 gem "request_store",                        "1.0.5"
 gem "sass-rails",                           "4.0.0"
+gem "simple_form"
 gem "therubyracer",                         "0.12.0", platforms: :ruby
+gem "turbolinks",                           "1.3.0"
 gem "uglifier",                             "2.2.1"
 gem "unicorn",                              "4.6.3"
 
