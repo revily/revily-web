@@ -24,3 +24,5 @@ module Revily
     end
   end
 end
+
+require 'revily/web'
