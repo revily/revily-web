@@ -53,7 +53,7 @@ module Revily::Web
     def middleware
       @middleware ||= Faraday::Builder.new do |builder|
         builder.request :json
-        builder.request :authorization, 'token', Request
+        builder.request :authorization, 'token', auth_token
         builder.use Faraday::Request::UrlEncoded
         builder.use Her::Middleware::DefaultParseJSON
         builder.adapter :net_http
