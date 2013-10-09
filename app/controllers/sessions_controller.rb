@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
   respond_to :html
 
+  before_filter :authenticate!, except: [ :new, :create, :_inspect ]
+
   def new
   end
 
@@ -16,12 +18,14 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.destroy
-    redirect_to root_url, notice: "Logged out!"
+    session[:auth_token] = nil
+    session[:user_id] = nil
+    respond_with do |format|
+      format.html { redirect_to root_url, notice: "Logged out!" }
+    end
   end
 
   def _inspect
-    # render text: "#{(RequestStore.store[:auth_token] || "nada")}"
     respond_with do |format|
       format.html
     end

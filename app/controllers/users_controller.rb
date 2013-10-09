@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   respond_to :html
 
+  before_filter :authenticate!
+
   def index
     @users = User.all.fetch
 
