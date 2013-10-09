@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "rails", "4.0.0"
 
 #TODO: use a proper gem
-gem "revily-client",                                 github: "revily/revily-client"
+gem "revily-client",                                  github: "revily/revily-client"
 
 gem "coffee-rails",                         "4.0.0"
 gem "dotenv-rails",                         "0.9.0"
