@@ -1,4 +1,5 @@
 class Service
-  include Her::Model
+  include Model
 
+  has_many :incidents
 end

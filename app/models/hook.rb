@@ -1,4 +1,5 @@
 class Hook
-  include Her::Model
+  include Model
 
+  attributes :name, :config, :events
 end

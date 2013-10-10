@@ -1,4 +1,7 @@
 class Incident
-  include Her::Model
+  include Model
 
+  belongs_to :service
+  
+  resource_path "incidents/:id"
 end

@@ -1,12 +1,15 @@
 class SessionsController < ApplicationController
   respond_to :html
 
-  before_filter :authenticate!, except: [ :new, :create, :_inspect ]
+  before_action :authenticate!, except: [ :new, :create, :_inspect ]
 
   def new
+    redirect_to root_url, alert: "You are already signed in." if current_user?
   end
 
   def create
+    reset_session
+    
     if @session = Session.authenticate(session_params[:email], session_params[:password])
       session[:auth_token] = @session.auth_token
       session[:user_id]    = @session.id

@@ -1,4 +1,4 @@
 class Event
-  include Her::Model
+  include Model
 
 end

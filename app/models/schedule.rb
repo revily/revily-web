@@ -1,4 +1,5 @@
 class Schedule
-  include Her::Model
+  include Model
 
+  has_many :schedule_layers
 end

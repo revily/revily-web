@@ -1,4 +1,5 @@
 class PolicyRule
-  include Her::Model
+  include Model
 
+  belongs_to :policy_rule
 end

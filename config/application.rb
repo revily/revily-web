@@ -12,7 +12,7 @@ module Revily
       config.generators do |g|
         g.test_framework      :rspec, view_specs: false, helper_specs: false
         g.fixture_replacement :factory_girl, dir: 'spec/factories'
-        g.template_engine     :haml
+        # g.template_engine     :haml
         g.javascript_engine   :coffee
         g.helper              false
         g.stylesheets         false
