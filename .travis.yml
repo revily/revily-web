@@ -9,7 +9,6 @@ env:
   - secure: RISOHPa+ZMQVwwH1sr7q+OxHm/uZKs0tQF+Sm6jFP1NPoUbvg1MSLFf13lSx7tZEpzxz4r/SJZK2g5XmqaSZJqoC+gLWJxQHVxgn1+MqArWpZaRjXFGL/hOi8HJBJ1yjaVw9yrp4ds4sy+hy/OTb+2iCRgSIZZR43gZAzfCqgjw=
 install: "script/bootstrap"
 script: "script/cibuild"
-after_script: 
 branches:
   only:
   - master
