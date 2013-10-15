@@ -1,5 +1,6 @@
 require 'revily/web/version'
 require 'revily/web/client'
+require 'revily/web/her_extensions'
 
 module Revily::Web
   class << self

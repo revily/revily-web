@@ -1,4 +1,5 @@
-require 'revily/web/token_authentication'
+require 'revily/web/request/token_authentication'
+require 'revily/web/response/parse_link_headers'
 
 module Revily::Web
   class Client
@@ -7,11 +8,6 @@ module Revily::Web
     def initialize
       @api = Her::API.setup(connection_options)
     end
-
-    # def auth_token
-    # @auth_token ||= RequestStore.store[:auth_token]
-    # end
-
 
     def get(*args)
       api.connection.get(*args)
@@ -40,8 +36,7 @@ module Revily::Web
         headers: {
           accept: "application/vnd.revily.v1+json",
           user_agent: Revily::Web.user_agent,
-          content_type: 'application/json; charset=utf-8'
-          # authorization: "token #{auth_token}"
+          content_type: "application/json; charset=utf-8"
         },
         url: Revily::Web.api_endpoint,
         builder: middleware
@@ -51,9 +46,12 @@ module Revily::Web
     def middleware
       @middleware ||= Faraday::Builder.new do |builder|
         builder.request :json
-        builder.use Revily::Web::TokenAuthentication
-        builder.use Faraday::Request::UrlEncoded
+        builder.request :token_authentication
+        builder.request :url_encoded
+
+        builder.response :parse_link_headers
         builder.use Her::Middleware::DefaultParseJSON
+
         builder.adapter :net_http
       end
     end

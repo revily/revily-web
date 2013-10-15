@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = events.fetch
+    @events = events.page(params[:page])
 
     respond_with @events
   end

@@ -6,7 +6,7 @@ class IncidentsController < ApplicationController
   before_action :incidents
 
   def index
-    @incidents = incidents.fetch
+    @incidents = incidents.page(params[:page]).where(unresolved: true)
 
     respond_with @incidents
   end
@@ -37,6 +37,6 @@ class IncidentsController < ApplicationController
   end
 
   def incidents
-    @incidents = @service.incidents
+    @incidents = (@service) ? @service.incidents : Incident.all
   end
 end

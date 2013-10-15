@@ -6,7 +6,7 @@ class ServicesController < ApplicationController
 
   # GET /services
   def index
-    @services = services.fetch
+    @services = services.page(params[:page])
 
     respond_with @services
   end

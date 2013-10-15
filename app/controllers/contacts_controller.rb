@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   before_action :contacts
 
   def index
-    @contacts = contacts.fetch
+    @contacts = contacts.page(params[:page])
 
     respond_with @contacts
   end
@@ -33,21 +33,21 @@ class ContactsController < ApplicationController
   def edit
     @contact = contacts.find(params[:id])
 
-    respond_with @contact
+    respond_with user, @contact
   end
 
   def update
     @contact = contacts.find(params[:id])
     @contact.update_attributes(contact_params)
 
-    respond_with @contact
+    respond_with user, @contact
   end
 
   def destroy
     @contact = contacts.find(params[:id])
     @contact.destroy
 
-    respond_with @contact
+    respond_with user, @contact
   end
 
   private

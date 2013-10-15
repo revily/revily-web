@@ -1,3 +1,22 @@
-<% @contacts.each do |contact| %>
-  <%== ap contact %>
-<% end %>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Label</th>
+        <th>Type</th>
+        <th>Address</th>
+        <th></th>
+      </tr>
+      <tbody>
+        <%= content_tag_for(:tr, @contacts) do |contact| %>
+          <td><%= contact.label %></td>
+          <td><%= contact.type %></td>
+          <td><%= contact.address %></td>
+          <td><%= link_to "Show", contact %></td>
+          <td><%= link_to "Edit", edit_user_contact_path(contact.user.id, contact) %></td>
+          <td><%= link_to "Delete", user_contact_path(contact.user.id, contact), method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <% end %>
+      </tbody>
+    </thead>
+  </table>
+</div>

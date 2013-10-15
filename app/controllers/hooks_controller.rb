@@ -6,7 +6,7 @@ class HooksController < ApplicationController
 
   # GET /hooks
   def index
-    @hooks = hooks.fetch
+    @hooks = hooks.page(params[:page])
 
     respond_with @hooks
   end

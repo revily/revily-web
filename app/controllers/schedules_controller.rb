@@ -6,7 +6,7 @@ class SchedulesController < ApplicationController
 
   # GET /schedules
   def index
-    @schedules = schedules.fetch
+    @schedules = schedules.page(params[:page])
 
     respond_with @schedules
   end

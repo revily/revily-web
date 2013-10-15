@@ -6,7 +6,7 @@ class PoliciesController < ApplicationController
 
   # GET /policies
   def index
-    @policies = policies.fetch
+    @policies = policies.page(params[:page])
 
     respond_with @policies
   end

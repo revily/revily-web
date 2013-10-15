@@ -6,7 +6,7 @@ class ScheduleLayersController < ApplicationController
   before_action :schedule_layers
 
   def index
-    @schedule_layers = schedule_layers.fetch
+    @schedule_layers = schedule_layers.page(params[:page])
 
     respond_with @schedule_layers
   end

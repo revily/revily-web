@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Revily::Web</title>
+  <meta charset="utf-8">
+  <title>Revily</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag "bootstrap-ie" %>
+  <![endif]-->
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrap">
 
-<%= yield %>
+    <%= render "application/header" %>
+    <div id="main" class="container">
+      <%= render "application/flash" %>
 
+      <div class="row">
+        <div id="sidebar-left" class="col-lg-2 col-sm-1">
+          <div class="hidden-print" role="complementary">
+            <%= render "application/sidebar" %>
+          </div>
+        </div>
+        <div id="content" class="col-lg-10 col-sm-11">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render "application/footer" %>
 </body>
 </html>

@@ -1,6 +1,6 @@
 require 'active_support/inflector'
 
-PORT = 19005
+PORT = 19002
 
 guard(:spork, 
   rspec_env: { 'RAILS_ENV' => 'test' },

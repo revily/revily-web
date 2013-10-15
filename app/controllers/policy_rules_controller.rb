@@ -6,7 +6,7 @@ class PolicyRulesController < ApplicationController
   before_action :policy_rules
 
   def index
-    @policy_rules = policy_rules.fetch
+    @policy_rules = policy_rules.page(params[:page])
 
     respond_with @policy_rules
   end

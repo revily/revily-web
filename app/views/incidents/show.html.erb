@@ -1,1 +1,37 @@
-<%== ap @incident %>
+<div class="page-header">
+  <%= link_to incidents_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <h1>Incident <%= @incident.id %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Message:</dt>
+  <dd><%= @incident.message %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @incident.description %></dd>
+
+  <dt>Details:</dt>
+  <dd><%= @incident.details %></dd>
+
+  <dt>State:</dt>
+  <dd><%= @incident.state %></dd>
+
+  <dt>Key:</dt>
+  <dd><%= @incident.key %></dd>
+
+  <dt>Current user:</dt>
+  <dd><%= @incident.current_user.name %></dd>
+
+  <dt>Current policy rule:</dt>
+  <dd><%= @incident.current_policy_rule.position %></dd>
+
+  <dt>Escalation loop count:</dt>
+  <dd><%= @incident.escalation_loop_count %></dd>
+
+  <dt>Service:</dt>
+  <dd><%= @incident.service.name %></dd>
+
+</dl>

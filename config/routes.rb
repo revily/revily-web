@@ -1,10 +1,10 @@
 Revily::Web::Application.routes.draw do
-  resources :hooks
+  root to: 'home#index'
 
-  root :to => 'home#index'
+  match '/auth/:provider/callback', to: 'sessions#create', via: [ :get, :post ]
 
   get 'sign_in' => 'sessions#new'
-  post 'sign_in' => 'sessions#create'
+  post 'sign_in' => 'sessions#old_create'
   delete 'sign_out' => 'sessions#destroy'
 
   resources :events, only: [ :index, :show ]
@@ -23,7 +23,7 @@ Revily::Web::Application.routes.draw do
     end
   end
 
-  resources :incidents, only: [ :index, :show, :update, :destroy ] do
+  resources :incidents, except: [ :new, :create ] do
     member do
       put 'acknowledge'
       put 'resolve'
@@ -49,11 +49,13 @@ Revily::Web::Application.routes.draw do
     end
   end
 
+
   resources :users do
     resources :contacts
   end
+  resources :contacts, except: [ :new, :create ]
 
-  resources :contacts, only: [ :index, :show, :update, :destroy ]
+  resources :hooks
 
   # TODO: remove this
   get '_inspect' => 'sessions#_inspect'

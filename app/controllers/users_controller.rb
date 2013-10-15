@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :users
   
   def index
-    @users = users.fetch
+    @users = users.page(params[:page])
 
     respond_with @users
   end
