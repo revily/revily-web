@@ -1,5 +1,5 @@
 class ScheduleLayer
-  include Model
+  include Revily::Model
 
   belongs_to :schedule
 end

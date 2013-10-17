@@ -1,5 +1,5 @@
 class Schedule
-  include Model
+  include Revily::Model
 
   has_many :schedule_layers
 end

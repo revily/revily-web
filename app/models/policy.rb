@@ -1,5 +1,5 @@
 class Policy
-  include Model
+  include Revily::Model
 
   has_many :policy_rules
 end

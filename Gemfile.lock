@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/remiprev/her.git
+  revision: f76d70019f8c480f3df113766cc8fa338f9b63b8
+  specs:
+    her (0.6.8)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      faraday (~> 0.8)
+      multi_json (~> 1.7)
+
+GIT
   remote: git://github.com/revily/revily-client.git
   revision: 7d931b8302d89cf2c8ddc5c93d50e8e470489e36
   specs:
@@ -119,11 +129,6 @@ GEM
       guard (>= 1.1)
       spork (>= 0.8.4)
     hashie (2.0.5)
-    her (0.6.8)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      faraday (~> 0.8)
-      multi_json (~> 1.7)
     hike (1.2.3)
     hirb (0.7.1)
     httpauth (0.2.0)
@@ -322,7 +327,7 @@ DEPENDENCIES
   guard-rspec (= 3.1.0)
   guard-shell (= 0.5.1)
   guard-spork (= 1.5.1)
-  her (= 0.6.8)
+  her!
   jquery-rails (= 3.0.4)
   json_spec (= 1.1.1)
   libnotify (= 0.8.2)

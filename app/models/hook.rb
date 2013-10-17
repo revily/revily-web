@@ -1,5 +1,5 @@
 class Hook
-  include Model
+  include Revily::Model
 
   attributes :name, :config, :events
 end

@@ -1,5 +1,7 @@
 class Service
-  include Model
-
+  include Revily::Model
+  
   has_many :incidents
+
+  attributes :name
 end

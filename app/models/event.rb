@@ -1,4 +1,4 @@
 class Event
-  include Model
+  include Revily::Model
 
 end

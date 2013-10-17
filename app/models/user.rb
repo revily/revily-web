@@ -1,5 +1,5 @@
 class User
-  include Model
+  include Revily::Model
 
   attributes :name, :email
   
